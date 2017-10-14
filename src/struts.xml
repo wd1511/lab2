@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name = "struts.devMode" value = "true"/>
+	<package name="wdhit" namespace = "/" extends="struts-default">
+		<!-- 添加图书的页面 -->
+		<action name="upload" class="wdhit.upload" method = "execute">
+			<result name="success">/login.jsp</result>
+			<result name="new">/addAuthor.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- 从通过ISBN查询的页面 -->
+		<action name="find" class="wdhit.find" method = "execute">
+			<result name="success">/find.jsp</result>
+			<result name="notfind">/notFind.jsp</result>
+		</action>
+		<!-- 通过作者查询的页面 -->
+		<action name="find2" class="wdhit.find2" method = "execute">
+			<result name="success">/chooseauthor.jsp</result>
+			<result name="notfind">/notFind.jsp</result>
+		</action>
+		<!-- 添加作者的页面 -->
+		<action name="addAuthor" class="wdhit.addAuthor" method = "execute">
+			<result name="success">/login.jsp</result>
+			<result name="notfind">/error.jsp</result>
+		</action>
+		<!-- 图书信息的页面 -->
+		<action name="bookmes" class="wdhit.bookmes" method = "execute">
+			<result name="success">/bookmes.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- 删除图书的页面 -->
+		<action name="delete" class="wdhit.delete" method = "execute">
+			<result name="success">/deleteRight.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- 选择作者的页面 -->
+		<action name="chooseauthor" class="wdhit.chooseauthor" method = "execute">
+			<result name="success">/find2.jsp</result>
+			<result name="notfind">/notFind.jsp</result>
+		</action>
+		<!-- 选择图书的页面 -->
+		<action name="changebook" class="wdhit.changebook" method = "execute">
+			<result name="success">/changeBook.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- 修改图书的页面 -->
+		<action name="changeb" class="wdhit.changeb" method = "execute">
+			<result name="success">/changeb.jsp</result>
+			<result name="addauthor">/addAuthor.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- 删除图书的页面 -->
+		<action name="deleteBook" class="wdhit.deleteBook" method = "execute">
+			<result name="success">/deleteBookShow.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- 删除图书的展示 -->
+		<action name="deletebookshow" class="wdhit.deletebookshow" method = "execute">
+			<result name="success">/deleteRight.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+</struts>
